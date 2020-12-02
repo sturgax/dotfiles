@@ -1,3 +1,4 @@
+" Just my simple config
 call plug#begin('~/.vim/plugged')
 
 Plug 'preservim/nerdtree'
