@@ -23,6 +23,7 @@ filetype plugin indent on
 syntax enable
 set bg=dark
 colorscheme codedark
+set nowrap
 
 set guifont=FiraCode\ 14
 
