@@ -1,7 +1,7 @@
 " Just my simple config
 call plug#begin('~/.vim/plugged')
 
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 "Plug 'yuezk/vim-js'
 "Plug 'HerringtonDarkholme/yats.vim'
@@ -15,6 +15,11 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomasiser/vim-code-dark'
+"Plug 'lervag/vimtex'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 
 call plug#end()
 
@@ -61,11 +66,12 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritePre * %s/\s\+$//e
 
 " general plugins.
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
+"map <Leader>t :NERDTreeToggle<CR>
 
-map <Leader>t :NERDTreeToggle<CR>
-
+" CoC Explorer
+nnoremap <Leader>e :CocCommand explorer<CR>
 " Javascript stuffies
 let g:javascript_plugin_jsdoc=1
 
@@ -83,3 +89,11 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Telescope nvim
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
